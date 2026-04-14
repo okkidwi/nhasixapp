@@ -718,6 +718,9 @@ class _SourceLoginPageState extends State<SourceLoginPage> {
     if (text.contains('500') || text.contains('server')) {
       return l10n.errorServer;
     }
+    if (rawError == 'key_sourceNotInitialized') {
+      return l10n.sourceNotInitialized;
+    }
 
     return l10n.errorUnknown;
   }

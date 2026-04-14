@@ -22,7 +22,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     _ensureDownloadPrivacy();
 
     await Future.delayed(const Duration(seconds: 2));
-    emit(HomeLoaded(data: 'Initial Data'));
+    emit(HomeLoaded(data: 'key_initialData'));
   }
 
   /// Ensure download privacy protection in background

@@ -32,7 +32,7 @@ class CrotpediaFeatureCubit extends Cubit<CrotpediaFeatureState> {
   Future<void> loadDoujinList({bool forceRefresh = false}) async {
     try {
       if (forceRefresh) {
-        emit(const CrotpediaFeatureSyncing('Syncing with server...'));
+        emit(const CrotpediaFeatureSyncing('key_syncingWithServer'));
       } else {
         emit(CrotpediaFeatureLoading());
       }

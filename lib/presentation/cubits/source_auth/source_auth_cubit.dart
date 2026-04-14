@@ -111,7 +111,7 @@ class SourceAuthCubit extends BaseCubit<SourceAuthState> {
   }) async {
     final sourceId = state.sourceId;
     if (sourceId.isEmpty) {
-      _emitSafe(state.copyWith(errorMessage: 'Source is not initialized'));
+      _emitSafe(state.copyWith(errorMessage: 'key_sourceNotInitialized'));
       return;
     }
 

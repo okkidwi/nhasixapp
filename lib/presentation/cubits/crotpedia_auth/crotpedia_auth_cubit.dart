@@ -51,12 +51,12 @@ class CrotpediaAuthCubit extends Cubit<CrotpediaAuthState> {
       if (result.success) {
         emit(CrotpediaAuthSuccess(result.username ?? email.split('@').first));
       } else {
-        emit(CrotpediaAuthError(result.errorMessage ?? 'Login failed'));
+        emit(CrotpediaAuthError(result.errorMessage ?? 'key_loginFailed'));
       }
     } catch (e) {
       _logger.e('Login error', error: e);
       emit(const CrotpediaAuthError(
-          'An unexpected error occurred during login'));
+          'key_unexpectedLoginError'));
     }
   }
 
@@ -68,7 +68,7 @@ class CrotpediaAuthCubit extends Cubit<CrotpediaAuthState> {
       emit(CrotpediaAuthSuccess(username));
     } catch (e) {
       _logger.e('External login error', error: e);
-      emit(const CrotpediaAuthError('Failed to capture session'));
+      emit(const CrotpediaAuthError('key_failedToCaptureSession'));
     }
   }
 
